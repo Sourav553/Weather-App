@@ -247,5 +247,30 @@ input:focus, button:focus {
     color: green;
     background-color: #ababab;
 }
+.dark-mode {
+    background-color: #121212;  /* overall dark background */
+    color: #eee;
+}
+
+.dark-mode .container {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .input-box {
+    background-color: #555;
+    color: white;
+}
+
+.dark-mode #modeToggle {
+    background-color: #444;
+    color: white;
+}
+
+.dark-mode .sunrise,
+.dark-mode .sunset {
+    color: #ddd;
+}
+
 
 
