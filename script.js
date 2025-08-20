@@ -129,5 +129,19 @@ function updateDateTime() {
 // Har second mein date/time update karo
 setInterval(updateDateTime, 1000);
 updateDateTime();
+const modeToggle = document.getElementById('modeToggle');
+const container = document.querySelector('.container');
+
+modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');  // body pe dark mode class toggle karenge
+
+    // Icon toggle karna (moon to sun aur vice versa)
+    if (document.body.classList.contains('dark-mode')) {
+        modeToggle.textContent = '☀️'; // jab dark mode on ho to sun icon dikhana
+    } else {
+        modeToggle.textContent = '🌙'; // jab dark mode off ho to moon icon dikhana
+    }
+});
+
 
 
