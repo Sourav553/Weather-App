@@ -109,4 +109,25 @@ function updateBackground(weatherCondition) {
     container.style.backgroundSize = "cover";
     container.style.backgroundPosition = "center";
 }
+function updateDateTime() {
+    const now = new Date();
+
+    const options = {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+    };
+
+    const formatted = now.toLocaleString('en-GB', options).replace(',', ' |');
+    document.getElementById("dateTime").textContent = formatted;
+}
+
+// Har second mein date/time update karo
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
 
