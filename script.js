@@ -45,26 +45,28 @@ document.getElementById("sunriseTime").textContent = formatTime(sunrise);
 document.getElementById("sunsetTime").textContent = formatTime(sunset);
 
 
-        const mainWeather = current.weather[0].main;
-        switch (mainWeather) {
-            case 'Clouds':
-                weather_img.src = "/images/cloudy.png";
-                break;
-            case 'Clear':
-                weather_img.src = "/images/clear.png";
-                break;
-            case 'Rain':
-                weather_img.src = "/images/rain.png";
-                break;
-            case 'Mist':
-                weather_img.src = "/images/mist.png";
-                break;
-            case 'Snow':
-                weather_img.src = "/images/snow.png";
-                break;
-            default:
-                weather_img.src = "/images/cloudy.png";
-        }
+       const basePath = `${window.location.origin}/Weather-App/images`;
+
+switch (mainWeather) {
+    case 'Clouds':
+        weather_img.src = `${basePath}/cloudy.png`;
+        break;
+    case 'Clear':
+        weather_img.src = `${basePath}/clear.png`;
+        break;
+    case 'Rain':
+        weather_img.src = `${basePath}/rain.png`;
+        break;
+    case 'Mist':
+        weather_img.src = `${basePath}/mist.png`;
+        break;
+    case 'Snow':
+        weather_img.src = `${basePath}/snow.png`;
+        break;
+    default:
+        weather_img.src = `${basePath}/cloudy.png`;
+}
+
 
         // ✅ Next 3 days forecast (8 * 1 = 24 hrs intervals)
         for (let i = 1; i <= 3; i++) {
@@ -237,3 +239,4 @@ function formatTime(timestamp) {
     let minutes = "0" + date.getMinutes();
     return hours + ":" + minutes.substr(-2);
 }
+
