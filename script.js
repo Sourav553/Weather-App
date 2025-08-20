@@ -142,6 +142,40 @@ modeToggle.addEventListener('click', () => {
         modeToggle.textContent = '🌙'; // jab dark mode off ho to moon icon dikhana
     }
 });
+document.getElementById("locationBtn").addEventListener("click", () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(successLocation, errorLocation);
+    } else {
+        alert("Geolocation is not supported by your browser.");
+    }
+});
+
+function successLocation(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod === "200") {
+                const city = data.city.name;
+                inputBox.value = city; // fill input with city name
+                getWeatherAndForecast(city); // reuse your main function
+            } else {
+                alert("Failed to fetch weather data from location.");
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching weather by location:", error);
+            alert("Location fetch failed.");
+        });
+}
+
+function errorLocation() {
+    alert("Unable to retrieve your location.");
+}
 
 
 
