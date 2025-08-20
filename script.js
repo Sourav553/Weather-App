@@ -9,6 +9,9 @@ const location_not_found = document.querySelector('.location-not-found');
 const forecastDays = document.querySelectorAll('.day-forecast');
 
 const API_KEY = "a3b4f8c7b6eae0938d9cfb145dce9028";
+const repoName = "Weather-App"; // ⚠️ Replace with your actual repo name
+const basePath = `${window.location.origin}/${repoName}/images`;
+
 
 searchBtn.addEventListener('click', () => {
     const city = inputBox.value;
@@ -239,4 +242,5 @@ function formatTime(timestamp) {
     let minutes = "0" + date.getMinutes();
     return hours + ":" + minutes.substr(-2);
 }
+
 
