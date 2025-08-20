@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="search-box">
+                <button id="modeToggle">🌙</button>
+                <input type="text" placeholder="Enter Your Location" class="input-box">
+                <button class="fa-solid fa-magnifying-glass" id="searchBtn"></button>
+                <button id="locationBtn">📍</button>
+            </div>
+        </div>
+        <div class="date-time-box">
+            <span id="dateTime"></span>
+        </div>
+        
+        <div class="location-not-found">
+            <img src="/images/404.jpg" alt="404 Error">
+        </div>
+        <div class="weather-body"> 
+            <img src="/images/cloudy.png" alt="Weather Image" class="weather-img">
+            <div class="weather-box">
+                <p class="temperature">0<sup>°C</sup>
+                </p>
+                <p class="description">Light Rain</p>
+            </div>
+            <div class="forecast">
+                <div class="day-forecast">
+                    <p class="day">Day 1</p>
+                    <img src="clear.png" class="forecast-icon" />
+                    <p class="forecast-temp">30°C</p>
+                </div>
+                <div class="day-forecast">
+                    <p class="day">Day 2</p>
+                    <img src="cloudy.png" class="forecast-icon" />
+                    <p class="forecast-temp">28°C</p>
+                </div>
+                <div class="day-forecast">
+                    <p class="day">Day 3</p>
+                    <img src="rain.png" class="forecast-icon" />
+                    <p class="forecast-temp">25°C</p>
+                </div>
+            </div>
+            <div class="weather-details">
+                <div class="humidity"><i class="fa-solid fa-droplet"></i>
+                </div>
+                <div class="text">
+                    <span id="humidity">45%</span>
+                    <p>Humidity</p>
+                </div>
+                <div class="Wind"><i class="fa-solid fa-wind"></i>
+                </div>
+                <div class="text">
+                    <span id="Wind-speed">12Km/h</span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+            <div class="sun-times">
+                <div class="sunrise">
+                    🌅 <span id="sunriseTime">--:--</span>
+                </div>
+                <div class="sunset">
+                    🌇 <span id="sunsetTime">--:--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/824a956f92.js" crossorigin="anonymous"></script>
+</body>
+</html>

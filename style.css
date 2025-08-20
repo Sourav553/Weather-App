@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border:none;
+    outline: none;
+    font-family: sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(2, 68, 66);
+}
+.container{
+    width: 90%;
+    max-width: 500px;
+    overflow-y:visible;
+    background-color:#fff;
+    border-radius: 12px;
+    padding: 20px;
+}
+.search-box{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-box input{
+    width: 60%;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: blue;
+    background-color: #e6f5fb;
+    padding: 12px 16px;
+    border-radius: 14px;
+}
+.search-box input::placeholder{
+    color: black;
+}
+.search-box button{
+    width: 46px;
+    height: 46px;
+    background-color: #e6f5fb;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+.search-box button:hover{
+    color: red;
+    background-color: #ababab;
+}
+.weather-body img{
+    width: 60%;
+    height: auto;
+}
+.weather-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 20px;
+}
+.weather-box{
+    margin-block: 20px;
+    text-align: center;
+}
+.weather-box .temperature{
+    font-size: 40px;
+    font-weight: 800;
+    position: relative;
+}
+.weather-box .temperature sup{
+    font-size: 20px;
+    position:absolute;
+    font-weight: 600;
+}
+.weather-box .description{
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.humidity,.wind{
+    display: flex;
+    align-items: center;
+}
+.humidity{
+    margin-left: 20px;
+}
+.wind{
+    margin-right: 20px;
+}
+.weather-details{
+    font-size: 36px;
+}
+.weather-details .text{
+    margin-left: 10px;
+    font-size: 16px;
+}
+.text span{
+    font-size: 20px;
+    font-weight: 700;
+}
+.location-not-found{
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.location-not-found img{
+    width:80%;
+}
+.location-not-found h1{
+    font-size: 20px;
+    color: #6b6b6b;
+    margin-block-end: 15px;
+}
+.forecast {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.day-forecast {
+    text-align: center;
+}
+
+.day-forecast .day {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.forecast-icon {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0;
+}
+
+.forecast-temp {
+    font-size: 18px;
+    font-weight: 600;
+}
+.dark-mode .container {
+    background-color: #333;  /* Dark background for card */
+    color: white;            /* Text color white */
+}
+
+.dark-mode .input-box {
+    background-color: #555;  /* Darker input box */
+    color: white;
+}
+
+.dark-mode #modeToggle {
+    background-color: #444;
+    color: white;
+}
+.container, .input-box, #modeToggle {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+input:focus, button:focus {
+    outline: 2px solid #00aaff;
+    outline-offset: 2px;
+}
+@media (max-width: 400px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+    .search-box input {
+        font-size: 16px;
+        width: 60%;
+    }
+    .search-box button {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    .weather-box .temperature {
+        font-size: 30px;
+    }
+}
+.date-time-box {
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+    
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background-color: #f2f9fc;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+#dateTime::before {
+    content: "📅 ";
+}
+.sun-times {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sunrise, .sunset {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #444;
+}
+
+.dark-mode .sunrise,
+.dark-mode .sunset {
+    color: #ddd; /* dark mode ke liye */
+}
+#locationBtn {
+    width: 46px;
+    height: 46px;
+    background-color: #e6f5fb;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+}
+#locationBtn:hover {
+    color: green;
+    background-color: #ababab;
+}
+
+
